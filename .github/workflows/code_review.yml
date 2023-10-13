@@ -1,0 +1,33 @@
+name: Automated Code Review
+
+on:
+  pull_request:
+    branches:
+      - main # ターゲットとなるブランチを指定
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Pythonのバージョンを指定
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt # 必要なパッケージをインストール
+
+      - name: Run Code Review Bot
+        id: review-bot # idを設定して、後続のステップから出力を参照できるようにする
+        run: echo "::set-output name=message::$(python code_review_bot.py)" # コードレビューボットのスクリプトを実行
+
+      - name: Comment on PR
+        uses: thollander/actions-comment-pull-request@master
+        with:
+          message: ${{ steps.review-bot.outputs.message }} # コードレビューボットからのフィードバックをPRにコメント
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
