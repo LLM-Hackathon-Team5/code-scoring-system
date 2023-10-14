@@ -1,0 +1,20 @@
+{"input_text": "コメントの詳細度はどの程度ですか？", "output_text": "高い (全てのコードにコメントをつける)"}
+{"input_text": "開発者の意図やTODOをコメントに記載しますか？", "output_text": "改善必要箇所のみTODOやFIXMEを記載"}
+{"input_text": "docstringの記載項目の詳細度はどの程度ですか？", "output_text": "処理の要約、引数、戻り値の説明"}
+{"input_text": "変数の型は動的に設定しますか、それとも静的に設定しますか？", "output_text": "できる限り静的に設定"}
+{"input_text": "識別子の命名は英語中心にしますか、それとも日本語中心にしますか？", "output_text": "日本語中心"}
+{"input_text": "関数やクラスの分割の詳細度はどの程度ですか？", "output_text": "高い (細かく分割)"}
+{"input_text": "識別子の命名で短縮形を許容しますか？", "output_text": "許容する"}
+{"input_text": "どのタイプのコメントを避けるべきですか？", "output_text": "TODOコメント"}
+{"input_text": "どの生成パターンを推奨しますか？", "output_text": "Singleton"}
+{"input_text": "どの構造パターンを推奨しますか？", "output_text": "Adapter"}
+{"input_text": "どの振る舞いパターンを推奨しますか？", "output_text": "Command"}
+{"input_text": "エラーハンドリングの方針は何ですか？", "output_text": "クリティカルなエラーのみキャッチ"}
+{"input_text": "コードのインデントスタイルは何ですか？", "output_text": "タブ"}
+{"input_text": "コードレビューの基準は何ですか？", "output_text": "可読性"}
+{"input_text": "ユニットテストの記述基準は何ですか？", "output_text": "中程度"}
+{"input_text": "関数やファイルの最大行数は何行ですか？", "output_text": "100行"}
+{"input_text": "テストカバレッジの目標値は何パーセントですか？", "output_text": "60-80%"}
+{"input_text": "使用するブランチングストラテジーは何ですか？", "output_text": "Gitflow"}
+{"input_text": "CI/CDツールを導入しますか？", "output_text": "はい、導入する"}
+{"input_text": "コードのリファクタリングの頻度はどの程度ですか？", "output_text": "高頻度"}

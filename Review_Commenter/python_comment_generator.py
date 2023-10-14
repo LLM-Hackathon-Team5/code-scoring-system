@@ -6,7 +6,10 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-API_URL = os.getenv('Tuned_PALM2_API_URL')  # PaLM 2のAPI URLを環境変数から取得
+# 環境変数からPaLM 2の基本URLとモデルのパスを取得して、完全なAPI URLを構築
+PALM2_BASE_URL = os.getenv('PALM2_BASE_URL')
+PALM2_MODEL_PATH = os.getenv('PALM2_MODEL_PATH')
+API_URL = f"{PALM2_BASE_URL}{PALM2_MODEL_PATH}"  
 
 def generate_comment(analysis_results):
     if not analysis_results:

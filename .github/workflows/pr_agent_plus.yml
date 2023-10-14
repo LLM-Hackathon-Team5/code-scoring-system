@@ -1,0 +1,33 @@
+name: Code Review Workflow
+
+on:
+  pull_request:
+    branches:
+      - main  # mainブランチに対するPull Requestでトリガー
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest  # 実行環境
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2  # リポジトリのコードをチェックアウト
+
+      - name: Set up Python
+        uses: actions/setup-python@v2  # Python環境をセットアップ
+        with:
+          python-version: 3.8  # 使用するPythonのバージョン
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # 必要なパッケージをインストール
+
+      - name: Run Code Analyzer
+        run: python CodeAnalyzer/python_analyzer.py development_rules.jsonl
+
+      - name: Run Code Auto Fixer
+        run: python CodeAutoFixer/python_fixer.py development_rules.jsonl
+
+      - name: Generate Review Comment
+        run: python Review_Commenter/python_comment_generator.py

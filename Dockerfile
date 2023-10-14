@@ -17,7 +17,7 @@ COPY llm-hackathon-pr-agent-plus-f9022659b239.json /app/service-account-key.json
 ENV GOOGLE_APPLICATION_CREDENTIALS /app/service-account-key.json
 
 # Make port 80 available to the world outside this container
-EXPOSE 80
+EXPOSE 8080
 
 # Define environment variable
 ENV NAME World

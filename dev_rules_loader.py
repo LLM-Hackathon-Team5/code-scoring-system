@@ -11,6 +11,6 @@ class DevRulesLoader:
 
 # 使用例
 if __name__ == "__main__":
-    loader = DevRulesLoader('development_rules.json')
+    loader = DevRulesLoader('development_rules.jsonl')
     dev_rules = loader.load_rules()
     print(dev_rules)
