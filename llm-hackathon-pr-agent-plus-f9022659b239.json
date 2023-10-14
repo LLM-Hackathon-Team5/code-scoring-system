@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "llm-hackathon-pr-agent-plus",
+  "private_key_id": "f9022659b239da33f363570640460ae3a19e6689",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCRQp/NzhVdSH9S\nox0C5bKx193B+2L6xFw5FGCmmgKuV8DtryIE3Emb1atux7hletjPJf2Nyswelrso\nJMeDX+b7Gn/7SYd60lE5fZDZAk3iI6qW6GN/zZrWQHv3Drb4c67M1kpSBuZlVeW/\nRfnwE+/mdtK8rOD/2RHYJjasS7309rhJAaNrHru3jWr/wuxwHo81S4Lur1NfrhZE\nEGauG7cMawsLXsHSkWKwGNgl45fayTxeNSTmwmcEMPeFfORBSa8BU9cbZmM30+Nt\nnI7h/KZg1cRnPhzj7zAJ+PXCAhZD3Y9190Rr78QyvqAR/xYZWjtiUkwXCnoCkQ20\nDNSiDjeTAgMBAAECggEAHPAo5dcoam0G8G+OWAVqlANtKjfqgAqeVMC6gHYuEo1o\n4fEB1fYMs/7dKDShh5Xxm1L2MEk2YOGmZ1jsZj+0xFGDLYx4cP91Lv7U3GaZHXP9\niBLDv7I2JniyOYW07coeCLCoHa9CNu3l1zUZlbpjEIabdPr71/xmkakLO0fbj/FJ\n1Z0JhlE7V0S+7G4pQfH/ZwRQV9W2jwRYxvvrhQzF4/1/0xqACfsLmEo6M/FfTXve\nWgcHAG1/CEKliDceI9sBJ/5xsdByzzREujme6I4ptBX4rZ4cqICleMUCl33V/fhh\nVk8peqlsJga3CkVvhr73bYZ7l+3Ky5Le4KtqDoNgAQKBgQDLCcEbtcH8ZaCpIRJh\nRwejdZ/Nx3dCr3qBa/0by9FfSSLZOb6hDEPevPc/2gb9ySqv1a3wnHl4qui5exuM\n0vQFx3Rc2M1qnNvusm0qPNMRtDrOPWRo06qFjkacrIfcUSkFleWXSNWzMooY4ubO\njUqaEW7LPdKxnFZNiXBFxe/jYwKBgQC3JqWRDe+J0exSeWnYBWr5D+leA1XmjmtF\nkCPe8YAWzoJ5BdCxoMCLGZr1MejGA0hbKa11Zh5GZIsb8fmwAAmkJc1nvspy9xCp\nx8Q70XSEUQD8XhwC/h//8hRSQCK/DMa/jEtn7MU6HBITZmEvdxIs/hsq6zrd3N0O\nNvVyHbzKEQKBgQCBoR6rhGXvsSrcEINdnC3iTMzUYs9fwg1i6AFXZ8+rGFSpf9aX\nl+8VHGx3Vco06eTZEoHVJvHe+q9PDKxQQrcNoYRHaxvrP26jfUN5PhA8M2eAGW4s\nB0fNsUKf8P9kyGR6bnOBHT1jBZdpwCRAJ7FDoHGuTTBhuUDYjDEkOvWnpQKBgBvh\nxUjM30+S5rAzjZp2UK+z7WoDhftAaTJA3EUfbMmMDK7R5NB10Xobnsx/GZmzfDts\nn9yEfE1pFwhdEQ7rIoybuKZ3lChmVmISaFxW6a8PCeBhj1AhUcvMFa3j16ZQEp2s\nhPpAQFI1XccYSelI7jptQMOK5f5KlliIo1sJDemRAoGAGf13rVoj91BnYEdy9jvj\nOl5o5VMSb/yR4yQ1HxYm7otCTsvpG4iTa96YYgDauIObCP0E+e7i07wIA0+e3DPq\nbCdshkX2VjE5XR0wR4JYsYJeuMrublQP8K2k8b3oCeqNJ/xbU0AP1fAyfyfgUiaW\nYYH1tCZGanxDjAnEseQExZc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "llm-hackathon-team5@llm-hackathon-pr-agent-plus.iam.gserviceaccount.com",
+  "client_id": "116251773662919234234",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/llm-hackathon-team5%40llm-hackathon-pr-agent-plus.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
