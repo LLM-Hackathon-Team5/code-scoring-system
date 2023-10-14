@@ -1,4 +1,4 @@
-name: Code Review Workflow
+name: Code Review Workflow on Pull Requests
 
 on:
   pull_request:
@@ -8,6 +8,9 @@ on:
 jobs:
   code-review:
     runs-on: ubuntu-latest  # 実行環境
+    env:  # 環境変数をここで設定
+        PALM2_BASE_URL: https://generativelanguage.googleapis.com
+        PALM2_MODEL_PATH: /v1beta2/models/text-bison-001:generateText
 
     steps:
       - name: Check out code
