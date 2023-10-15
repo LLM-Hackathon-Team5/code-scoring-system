@@ -57,6 +57,10 @@ class PythonAnalyzer:
         return issue in rule['input_text']  # 例です、実際のルール構造に基づいて調整してください
 
 if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: python_analyzer.py <file_path> <dev_rules_jsonl>")
+        sys.exit(1)
+
     file_path = sys.argv[1]
     dev_rules_jsonl = sys.argv[2]  # 開発ルールのJSONLファイルのパスをここに渡します
 

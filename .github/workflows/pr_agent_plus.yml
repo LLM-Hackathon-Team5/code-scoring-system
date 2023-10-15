@@ -1,9 +1,11 @@
-name: Code Review Workflow on Pull Requests
+name: PR-Agent-plus Workflow on Pull Requests
 
 on:
   pull_request:
     branches:
       - main  # mainブランチに対するPull Requestでトリガー
+    paths: 
+      - '**.py'  # これでPythonファイルの変更のみをトリガーとして設定できます
 
 jobs:
   code-review:
@@ -15,6 +17,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2  # リポジトリのコードをチェックアウト
+        with:
+            token: ${{ secrets.GH_PAT }}
 
       - name: Set up Python
         uses: actions/setup-python@v2  # Python環境をセットアップ
@@ -26,11 +30,39 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt  # 必要なパッケージをインストール
 
-      - name: Run Code Analyzer
-        run: python CodeAnalyzer/python_analyzer.py development_rules.jsonl
+      - name: Get changed files
+        id: getfile
+        run: |
+          echo 'Files changed:'
+          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep .py)
+          for file in ${files}; do
+              echo $file
+          done
+          echo "::set-output name=files::$files"
 
-      - name: Run Code Auto Fixer
-        run: python CodeAutoFixer/python_fixer.py development_rules.jsonl
+      - name: Run Code Analyzer on changed files
+        run: |
+          IFS=' ' read -r -a files <<< "${{ steps.getfile.outputs.files }}"
+          for file in "${files[@]}"; do
+            python CodeAnalyzer/python_analyzer.py "$file" development_rules.jsonl
+          done
 
-      - name: Generate Review Comment
-        run: python Review_Commenter/python_comment_generator.py
+      - name: Run Code Auto Fixer on changed files
+        run: |
+          IFS=' ' read -r -a files <<< "${{ steps.getfile.outputs.files }}"
+          for file in "${files[@]}"; do
+            python CodeAutoFixer/python_fixer.py "$file" development_rules.jsonl
+          done
+
+      - name: Generate Review Comment on changed files
+        run: |
+          IFS=' ' read -r -a files <<< "${{ steps.getfile.outputs.files }}"
+          for file in "${files[@]}"; do
+            python Review_Commenter/python_comment_generator.py "$file" 
+          done
+      - name: Post Review Comment on changed files
+        run: |
+          IFS=' ' read -r -a files <<< "${{ steps.getfile.outputs.files }}"
+          for file in "${files[@]}"; do
+            python post_comment.py "$file" ${{ secrets.GH_PAT }}
+          done
