@@ -19,8 +19,10 @@ ENV GOOGLE_APPLICATION_CREDENTIALS /app/service-account-key.json
 # Make port 80 available to the world outside this container
 EXPOSE 8080
 
-# Define environment variable
-ENV NAME World
+# 環境変数の追加
+ENV PALM2_BASE_URL=https://generativelanguage.googleapis.com
+ENV PALM2_MODEL_PATH=/v1beta2/models/text-bison-001:generateText
+
 
 # Run start.sh when the container launches
 CMD ["sh", "start.sh"]
