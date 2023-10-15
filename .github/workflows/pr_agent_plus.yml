@@ -34,9 +34,14 @@ jobs:
         id: getfile
         run: |
           echo 'Files changed:'
-          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep .py)
+          files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep .py) || echo "Error occurred with git diff or no files found."
+          if [ -z "$files" ]; then
+            echo "No Python files were changed."
+            echo "::set-output name=files::"
+            exit 0
+          fi
           for file in ${files}; do
-              echo $file
+            echo $file
           done
           echo "::set-output name=files::$files"
 
